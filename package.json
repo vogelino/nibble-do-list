@@ -1,0 +1,27 @@
+{
+  "name": "nibble-do-list",
+  "version": "1.0.0",
+  "description": "Avoid procrastinating! Reward yourself while getting your stuff done! Hmmm!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://vogelino@bitbucket.org/vogelino/nibble-do-list.git"
+  },
+  "keywords": [
+    "nibble",
+    "procrastination",
+    "reward",
+    "todo",
+    "arduino",
+    "johnny-five",
+    "node-js",
+    "express",
+    "socket.io"
+  ],
+  "author": "Lucas Vogel (Vogelino)",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/vogelino/nibble-do-list#readme"
+}
