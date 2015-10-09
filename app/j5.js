@@ -4,8 +4,8 @@ var board = new five.Board();
 var boardReady = null;
 var servo = null;
 var servoPosition = {
-	closed: 60,
-	open: 150
+	closed: 1,
+	open: 91
 };
 
 board.on('ready', function() {
@@ -16,7 +16,7 @@ board.on('ready', function() {
 exports.init = function() {
 	if (!!servo && !!boardReady) {
 		console.log('Initializing the dispenser');
-		servo.to(servoPosition.closed).stop();
+		servo.min();
 	}
 };
 
