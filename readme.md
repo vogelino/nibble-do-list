@@ -11,10 +11,10 @@ The [Arduino Uno Board](https://www.arduino.cc/en/Main/ArduinoBoardUno) is contr
 Using Johnny Five, a node server and a website using soket.io allowed me to realize every step of the project in the Javascript language.
 
 ### First sketches
-<img src="http://demo.vogelino.com/nibble-do-list/sketch-3d-view.jpg" alt="Rough sketch of dispenser's look" style="float: left; width: 25%;"/>
-<img src="http://demo.vogelino.com/nibble-do-list/sketch-front-view.jpg" style="float: left; width: 25%;" alt="Rough sketch of front's look"/>
-<img src="http://demo.vogelino.com/nibble-do-list/sketch-side-view.jpg" style="float: left; width: 25%;" alt="Rough sketch of side's look"/>
-<img src="http://demo.vogelino.com/nibble-do-list/sketch-list-view.jpg" style="float: left; width: 25%;" alt="Rough sketch of side's look"/>
+<img src="http://demo.vogelino.com/nibble-do-list/sketch-3d-view.jpg" alt="Rough sketch of dispenser's look" style="width: 180px;"/>
+<img src="http://demo.vogelino.com/nibble-do-list/sketch-front-view.jpg" style="width: 180px;" alt="Rough sketch of front's look"/>
+<img src="http://demo.vogelino.com/nibble-do-list/sketch-side-view.jpg" style="width: 180px;" alt="Rough sketch of side's look"/>
+<img src="http://demo.vogelino.com/nibble-do-list/sketch-list-view.jpg" style="width: 180px;" alt="Rough sketch of side's look"/>
 
 
 --
