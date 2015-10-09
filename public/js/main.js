@@ -7,8 +7,7 @@ $(document).ready(function () {
 	$('#test').click(function(e) {
 		e.preventDefault();
 		socket.send({
-			type: 'MOVE_SERVO',
-			value: 45
+			type: 'TASK_COMPLETED'
 		});
 	});
 });

@@ -14,17 +14,32 @@ app.get('/', function(req, res){
 });
 
 socket.on('connection', function(client) {
+	j5.init();
+
 	client.on('message', function(action) {
 		console.log('Message recievde from client with action "' + action.type + '"');
-		switch(action.type) {
-			case 'MOVE_SERVO':
-				j5.to(action.value);
-			break;
-			default:
-				return action;
-		}
+		var functionToExecute = getFunctionFromAction(action);
+		functionToExecute();
 	});
 });
 
 console.log('Listening on port http://localhost:' + port);
 server.listen(port);
+
+function getFunctionFromAction(action) {
+	switch(action.type) {
+		case 'TASK_COMPLETED':
+			return rewardUser;
+		default:
+			return action;
+	}
+}
+
+function rewardUser() {
+	j5.openDispenser();
+	var timeoutID = null;
+	timeoutID = setTimeout(function() {
+		j5.closeDispenser();
+		clearTimeout(timeoutID);
+	}, 2000);
+}

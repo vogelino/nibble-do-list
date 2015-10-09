@@ -3,15 +3,33 @@ var five = require('johnny-five');
 var board = new five.Board();
 var boardReady = null;
 var servo = null;
+var servoPosition = {
+	closed: 60,
+	open: 150
+};
 
 board.on('ready', function() {
 	boardReady = true;
 	servo = five.Servo(10);
-	servo.center();
 });
 
-exports.to = function(degree) {
+exports.init = function() {
 	if (!!servo && !!boardReady) {
-		servo.to(degree);
+		console.log('Initializing the dispenser');
+		servo.to(servoPosition.closed).stop();
+	}
+};
+
+exports.closeDispenser = function() {
+	if (!!servo && !!boardReady) {
+		console.log('Closing the dispenser');
+		servo.to(servoPosition.closed).stop();
+	}
+};
+
+exports.openDispenser = function() {
+	if (!!servo && !!boardReady) {
+		console.log('Opening the dispenser');
+		servo.to(servoPosition.open).stop();
 	}
 }
