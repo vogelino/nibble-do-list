@@ -3,23 +3,26 @@
 var express = require('express');
 var app = express();
 var server = require('http').createServer(app);
-var j5 = require('johnny-five');
+var j5 = require("./app/j5");
 var io = require('socket.io');
-var server = require('http').createServer(app);
-var socket = socket.listen(server);
-var board = new five.Board();
+var socket = io.listen(server);
 var port = 3000;
 
-app.use('/', express.static(_dirname + 'public'));
+app.use('/', express.static(__dirname + '/public'));
 app.get('/', function(req, res){
 	res.sendFile('index.html');
 });
 
-board.on('ready', function() {
-	socket.on('connection', function(client) {
-		client.on('message', function(value) {
-			console.log('Message recievde from client with value %d', value);
-		});
+socket.on('connection', function(client) {
+	client.on('message', function(action) {
+		console.log('Message recievde from client with action "' + action.type + '"');
+		switch(action.type) {
+			case 'MOVE_SERVO':
+				j5.to(action.value);
+			break;
+			default:
+				return action;
+		}
 	});
 });
 
