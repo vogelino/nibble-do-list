@@ -14,6 +14,9 @@ Using Johnny Five, a node server and a website using soket.io allowed me to real
 |<img src="http://demo.vogelino.com/nibble-do-list/sketch-3d-view.jpg" alt="Rough sketch of dispenser's look"/>|<img src="http://demo.vogelino.com/nibble-do-list/sketch-front-view.jpg" alt="Rough sketch of front's look"/>|<img src="http://demo.vogelino.com/nibble-do-list/sketch-side-view.jpg" alt="Rough sketch of side's look"/>|<img src="http://demo.vogelino.com/nibble-do-list/sketch-list-view.jpg"  alt="Rough sketch of side's look"/>|
 |---|---|---|---|
 
+### Realistic simulation
+<img src="http://demo.vogelino.com/nibble-do-list/realistic-simulation.jpg" alt="Rough sketch of dispenser's look"/>
+
 
 --
 
