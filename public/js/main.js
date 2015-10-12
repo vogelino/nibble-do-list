@@ -9,7 +9,8 @@ var TodoItem = React.createClass({
 		id: React.PropTypes.number.isRequired,
 		done: React.PropTypes.bool.isRequired,
 		isNewField: React.PropTypes.bool.isRequired,
-		onTodoChange: React.PropTypes.func.isRequired
+		onTodoChange: React.PropTypes.func.isRequired,
+		onTodoRemove: React.PropTypes.func.isRequired
 	},
 	onChange: function () {
 		this.props.onTodoChange(Object.assign({}, {
@@ -17,6 +18,20 @@ var TodoItem = React.createClass({
 			id: this.props.id,
 			done: this.refs.done.checked
 		}));
+	},
+	onBlur: function () {
+		if (!this.refs.title.value && !this.props.isNewField) {
+			this.props.onTodoRemove(Object.assign({}, {
+				title: this.refs.title.value,
+				id: this.props.id,
+				done: this.refs.done.checked
+			}));
+		}
+	},
+	onKeyDown: function (e) {
+		if (e.which === 13) {
+			e.target.parentNode.nextSibling.childNodes[1].focus();
+		}
 	},
 	render: function() {
 		return (
@@ -37,7 +52,10 @@ var TodoItem = React.createClass({
 					type: 'text',
 					value: this.props.title,
 					ref: 'title',
-					onChange: this.onChange
+					onChange: this.onChange,
+					onBlur: this.onBlur,
+					onKeyDown: this.onKeyDown,
+					placeholder: (this.props.isNewField ? 'Add a new todo' : '')
 				})
 			)
 		);
@@ -48,10 +66,12 @@ var TodoList = React.createClass({
 	propTypes: {
 		todos: React.PropTypes.array.isRequired,
 		newTodo: React.PropTypes.object.isRequired,
-		onTodoChange: React.PropTypes.func.isRequired
+		onTodoChange: React.PropTypes.func.isRequired,
+		onTodoRemove: React.PropTypes.func.isRequired
 	},
 	render: function() {
 		var onTodoChange = this.props.onTodoChange;
+		var onTodoRemove = this.props.onTodoRemove;
 		var listOfTodos = this.props.todos.map(function (todo) {
 			return (
 				React.createElement(TodoItem, {
@@ -60,7 +80,8 @@ var TodoList = React.createClass({
 					key: todo.id,
 					done: todo.done,
 					isNewField: false,
-					onTodoChange: onTodoChange
+					onTodoChange: onTodoChange,
+					onTodoRemove: onTodoRemove
 				})
 			);
 		});
@@ -71,11 +92,15 @@ var TodoList = React.createClass({
 				key: this.props.todos.length,
 				done: this.props.newTodo.done,
 				isNewField: true,
-				onTodoChange: onTodoChange
+				onTodoChange: onTodoChange,
+				onTodoRemove: onTodoRemove
 			})
 		);
 		return (
-			React.createElement('ul', { className: 'todo-list' }, listOfTodos)
+			React.createElement('div', {},
+				React.createElement('h1', {}, 'The nibble-do list'),
+				React.createElement('ul', { className: 'todo-list' }, listOfTodos)
+			)
 		);
 	}
 });
@@ -119,13 +144,20 @@ function onTodoChange(changes) {
 	}
 }
 
+function onTodoRemove(todoToRemove) {
+	var newTodos = state.todos.slice(0);
+    newTodos.shift(todoToRemove);
+    setState({ todos: newTodos});
+}
+
 // Model
 var state = {};
 
 function setState(changes) {
     Object.assign(state, changes);
     var Component = React.createElement(TodoList, Object.assign({}, state, {
-		onTodoChange: onTodoChange
+		onTodoChange: onTodoChange,
+		onTodoRemove: onTodoRemove
 	}));
 
     ReactDOM.render(Component, document.getElementById('app'));

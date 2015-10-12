@@ -1,7 +1,7 @@
 body {
     background: whitesmoke;
     font-family: Arial, sans-serif;
-    font-size: 14px;
+    font-size: 18px;
     width: 400px;
     margin: 0 auto;
 }
@@ -15,6 +15,11 @@ body {
     float: left;
 }
 
+#app h1 {
+    font-size: 24px;
+    margin: 0 0 10px 0;
+}
+
 .todo-list,
 .todo-item {
     width: 100%;
@@ -22,6 +27,10 @@ body {
     padding: 0;
     margin: 0;
     float: left;
+}
+
+.todo-item {
+    margin-bottom: 5px;
 }
 
 .todo-item-done input[type=text] {
@@ -34,6 +43,8 @@ body {
     box-sizing: border-box;
     border: 1px solid transparent;
     padding: 5px;
+    font-size: 18px;
+    border-radius: 3px;
 }
 
 .todo-item-new-field input[type=text],
@@ -47,7 +58,8 @@ body {
 }
 
 .todo-item input[type=checkbox] {
-    margin: 7px;
+    margin: 10px 7px;
+    font-size: 18px;
 }
 
 .todo-item-new-field input[type=checkbox] {
