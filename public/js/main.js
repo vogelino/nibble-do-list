@@ -10,12 +10,11 @@ var TodoItem = React.createClass({
 		done: React.PropTypes.bool.isRequired,
 		onTodoChange: React.PropTypes.func.isRequired
 	},
-	onChange: function (e) {
-		e.stopPropagation();
+	onChange: function () {
 		this.props.onTodoChange(Object.assign({}, {
 			title: this.refs.title.value,
 			id: this.props.id,
-			done: !this.refs.done.value
+			done: this.refs.done.checked
 		}));
 	},
 	render: function() {
@@ -81,7 +80,15 @@ function onTodoChange(changes) {
 	console.log('Todo state updated', changes);
 	var newTodos = [];
 	state.todos.forEach(function (todo) {
-		newTodos.push(todo.id === changes.id ? changes : todo);
+		if (todo.id === changes.id) {
+			newTodos.push(changes);
+			if (!todo.done && !!changes.done) {
+				markTaskComplete();
+			}
+		}
+		else {
+			newTodos.push(todo);
+		}
 	});
 	setState({ todos: newTodos });
 }

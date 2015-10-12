@@ -1,0 +1,48 @@
+body {
+    background: whitesmoke;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    width: 400px;
+    margin: 0 auto;
+}
+
+#app {
+    width: 100%;
+    background: white;
+    border: 1px solid #efefef;
+    box-sizing: border-box;
+    padding: 15px 10px;
+}
+
+.todo-list,
+.todo-item {
+    width: 100%;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.todo-item-done input[type=text] {
+    text-decoration: line-through;
+}
+
+.todo-item input[type=text] {
+    width: 350px;
+    float: right;
+    box-sizing: border-box;
+    border: 1px solid transparent;
+    padding: 5px;
+}
+
+.todo-item input[type=text]:hover {
+    border: 1px solid #efefef;
+}
+
+.todo-item input[type=text]:focus {
+    border: 1px solid lightgrey;
+    text-decoration: none;
+}
+
+.todo-item input[type=checkbox] {
+    margin: 7px;
+}
