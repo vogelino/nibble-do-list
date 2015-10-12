@@ -29,7 +29,9 @@ var TodoItem = React.createClass({
 		}
 	},
 	onKeyDown: function (e) {
+		if (this.props.isNewField) { return; }
 		if (e.which === 13) {
+			e.preventDefault();
 			e.target.parentNode.nextSibling.childNodes[1].focus();
 		}
 	},
