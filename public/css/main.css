@@ -12,6 +12,7 @@ body {
     border: 1px solid #efefef;
     box-sizing: border-box;
     padding: 15px 10px;
+    float: left;
 }
 
 .todo-list,
@@ -20,6 +21,7 @@ body {
     list-style: none;
     padding: 0;
     margin: 0;
+    float: left;
 }
 
 .todo-item-done input[type=text] {
@@ -34,6 +36,7 @@ body {
     padding: 5px;
 }
 
+.todo-item-new-field input[type=text],
 .todo-item input[type=text]:hover {
     border: 1px solid #efefef;
 }
@@ -45,4 +48,8 @@ body {
 
 .todo-item input[type=checkbox] {
     margin: 7px;
+}
+
+.todo-item-new-field input[type=checkbox] {
+    opacity: .5;
 }

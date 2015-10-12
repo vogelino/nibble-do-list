@@ -8,6 +8,7 @@ var TodoItem = React.createClass({
 		title: React.PropTypes.string.isRequired,
 		id: React.PropTypes.number.isRequired,
 		done: React.PropTypes.bool.isRequired,
+		isNewField: React.PropTypes.bool.isRequired,
 		onTodoChange: React.PropTypes.func.isRequired
 	},
 	onChange: function () {
@@ -21,7 +22,8 @@ var TodoItem = React.createClass({
 		return (
 			React.createElement('li', {
 				className: 'todo-item ' +
-					(this.props.done ? 'todo-item-done' : '')
+					(this.props.done ? 'todo-item-done ' : '') +
+					(this.props.isNewField ? 'todo-item-new-field' : '')
 			},
 				React.createElement('input', {
 					type: 'checkbox',
@@ -45,6 +47,7 @@ var TodoItem = React.createClass({
 var TodoList = React.createClass({
 	propTypes: {
 		todos: React.PropTypes.array.isRequired,
+		newTodo: React.PropTypes.object.isRequired,
 		onTodoChange: React.PropTypes.func.isRequired
 	},
 	render: function() {
@@ -56,10 +59,21 @@ var TodoList = React.createClass({
 					id: todo.id,
 					key: todo.id,
 					done: todo.done,
+					isNewField: false,
 					onTodoChange: onTodoChange
 				})
 			);
 		});
+		listOfTodos.push(
+			React.createElement(TodoItem, {
+				title: this.props.newTodo.title,
+				id: this.props.todos.length,
+				key: this.props.todos.length,
+				done: this.props.newTodo.done,
+				isNewField: true,
+				onTodoChange: onTodoChange
+			})
+		);
 		return (
 			React.createElement('ul', { className: 'todo-list' }, listOfTodos)
 		);
@@ -67,7 +81,7 @@ var TodoList = React.createClass({
 });
 
 // Templates
-var TODO_TEMPLATE = { title: '', id: '', done: '', errors: {}}
+var TODO_TEMPLATE = { title: '', id: null, done: false, errors: {}}
 
 // Actions
 function markTaskComplete() {
@@ -79,18 +93,30 @@ function markTaskComplete() {
 function onTodoChange(changes) {
 	console.log('Todo state updated', changes);
 	var newTodos = [];
+	var found = false;
+
 	state.todos.forEach(function (todo) {
 		if (todo.id === changes.id) {
 			newTodos.push(changes);
 			if (!todo.done && !!changes.done) {
 				markTaskComplete();
 			}
+			found = true;
 		}
 		else {
 			newTodos.push(todo);
 		}
 	});
-	setState({ todos: newTodos });
+	if (!found) {
+		newTodos.push(changes);
+		setState({
+			todos: newTodos,
+			newTodo: Object.assign({}, TODO_TEMPLATE)
+		});
+	}
+	else {
+		setState({ todos: newTodos });
+	}
 }
 
 // Model
@@ -108,7 +134,8 @@ function setState(changes) {
 setState({
 	todos: [{
 		title: 'Test todo',
-		id: 1,
+		id: 0,
 		done: false
-	}]
+	}],
+	newTodo: Object.assign({}, TODO_TEMPLATE)
 });
