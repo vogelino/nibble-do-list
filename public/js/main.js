@@ -98,10 +98,19 @@ var TodoList = React.createClass({
 				onTodoRemove: onTodoRemove
 			})
 		);
+		return React.createElement('ul', { className: 'todo-list' }, listOfTodos);
+	}
+});
+
+var AppView = React.createClass({
+	propTypes: {
+		state: React.PropTypes.object.isRequired
+	},
+	render: function () {
 		return (
 			React.createElement('div', {},
 				React.createElement('h1', {}, 'The nibble-do list'),
-				React.createElement('ul', { className: 'todo-list' }, listOfTodos)
+				React.createElement(TodoList, this.props.state)
 			)
 		);
 	}
@@ -157,10 +166,12 @@ var state = {};
 
 function setState(changes) {
     Object.assign(state, changes);
-    var Component = React.createElement(TodoList, Object.assign({}, state, {
-		onTodoChange: onTodoChange,
-		onTodoRemove: onTodoRemove
-	}));
+    var Component = React.createElement(AppView, {
+		state: Object.assign({}, state, {
+			onTodoChange: onTodoChange,
+			onTodoRemove: onTodoRemove
+		})
+	});
 
     ReactDOM.render(Component, document.getElementById('app'));
 }
