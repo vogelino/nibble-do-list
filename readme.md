@@ -34,7 +34,7 @@ I must admit that the first prototype has been made too quick and dirty. Above a
 |<img src="http://demo.vogelino.com/nibble-do-list/prototype-v1-overview.jpg" alt="First prototype overall view"/>|<img src="http://demo.vogelino.com/nibble-do-list/prototype-v1-servo.jpg" alt="First prototype's servo"/>|<img src="http://demo.vogelino.com/nibble-do-list/prototype-v1-hole.jpg" alt="First prototype's hole"/>|
 |---|---|---|
 
-### Prototype
+### Prototype 2
 
 <img src="http://demo.vogelino.com/nibble-do-list/prototype-v2-plans.jpg" height="80" style="float: right; margin-left: 30px;" alt="Plans of the second prototype"/>
 
