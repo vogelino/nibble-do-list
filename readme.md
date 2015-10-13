@@ -1,4 +1,7 @@
-# The nibble-do list
+# The nibble-do list  
+
+[![Gitter Chat](https://badges.gitter.im/vogelino/nibble-do-list.svg)](https://gitter.im/vogelino/nibble-do-list)  
+
 This project was made in October 2015 at the [Fachhochschule Potsdam](http://www.fh-potsdam.de) as part of the course ["Johnny Five is Alive"](https://fhp.incom.org/workspace/6174/5) supervised by [Fabian Morón Zifras](https://fhp.incom.org/profil/270). The idea of the course was to create an [IoT](https://en.wikipedia.org/wiki/Internet_of_Things) service, communicating from one or many physical machines to a website.
 
 The nibble-do list is a website connected with a candy dispenser. The candy dispenser can be placed on a desk next to a user computer. On the website, the user can define tasks on a todo list. When a task is completed, the candy dispenser is automatically made aware of this completion and rewards the user with some candies.
