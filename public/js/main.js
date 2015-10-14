@@ -177,10 +177,24 @@ function setState(changes) {
 }
 
 setState({
-	todos: [{
-		title: 'Test todo',
-		id: 0,
-		done: false
-	}],
+	todos: [
+		{
+			title: 'Wash the bathroom',
+			id: 0,
+			done: false
+		},{
+			title: 'Wash the dishes',
+			id: 1,
+			done: false
+		},{
+			title: 'Wash the dog',
+			id: 2,
+			done: false
+		},{
+			title: 'Wash myself',
+			id: 3,
+			done: true
+		}
+	],
 	newTodo: Object.assign({}, TODO_TEMPLATE)
 });
