@@ -48,13 +48,32 @@ I started to assemble the pieces together and everything was working according t
 |<img src="http://demo.vogelino.com/nibble-do-list/prototype-v2-bones-view.jpg"  alt="Rough sketch of side's look"/>|<img src="http://demo.vogelino.com/nibble-do-list/prototype-v2-overview.jpg" alt="Rough sketch of dispenser's look"/>|<img src="http://demo.vogelino.com/nibble-do-list/prototype-v2-bird-view.jpg" alt="Rough sketch of front's look"/>|<img src="http://demo.vogelino.com/nibble-do-list/prototype-v2-entrance-open.jpg" alt="Rough sketch of side's look"/>|<img src="http://demo.vogelino.com/nibble-do-list/prototype-v2-entrance-closed.jpg"  alt="Rough sketch of side's look"/>|
 
 
-The rotation of the cylinder was quite smooth and worked even better than excepted. The first problem occurred when filling the prototype with peanuts. I suppose that the weight of the cylinder made move the helices of the servo from their original position. This twisted the axis of the cylinder and blocked the its rotation.
+The rotation of the cylinder was quite smooth and worked even better than excepted. The first problem occurred when filling the prototype with peanuts. I suppose that the weight of the cylinder shifted the helices of the servo from their original position. This twisted the axis of the cylinder and blocked the its rotation. Fortunately I could fix the problem by putting the cylinder a bit lower!
 
-I'm working on fixing this but it doesn't seems that easy as the whole box is fixed with glue (a good one unfortunately…) :cry:
+```
+// Images and videos coming
+```
 
-Now the question that follows is: "Will I need a third prototype?" That's yet unclear. If necessary, I may want to look for actually working candy dispensers that I could hack and trigger automatically. I'm not really as enthusiastic about that idea than building my own.
+The second issue happened when the recipient was filled with peanuts until the top. The cylinder's rotation blocked because peanuts were half in the cylinder's hole and half in the recipient. To be sure that this caused the blocking, I inserted red lentils (way smaller) into the recipient. At this size the rotation worked well, even when marking tasks as "done" one after the other.
 
-**Anyway, stay tuned!**
+I spoke about this issue to Fabian and he recommended me to try with _smarties_. I tried and it still blocked some times. I found out that the helices fixed to the cylinder where sometimes moving without the cylinder itself. The helices were not fixed with glue anymore but with masking tape. So, I replaced it with adhesive tape which held much better.
+
+After these many fixes, the prototype was finally working as excepted. Optically, the object itself became no masterpiece and honestly, it looks even quite ugly. However, I'm not product designer and I really don't pretend to it. If this would have been a real project, I think it would have been enough self-explanatory to communicate the idea and the purpose of the product.
+
+```
+// Images and videos coming
+```
+
+### Conclusion
+Within two weeks, I could conceptualize, code and build a product in the amazing Internet of Things and make my first step in the world of physical Computing! I was impressed how easy it has been to achieve basic things, particularly if you come from the javascript world. Johnny Five allowed me to code an Arduino board without been forced to learn another language, which made me feel really comfortable.
+
+I'm highly positive about realizing this project and about following this course. I really enjoyed doing it and learned a lot of stuff. It enlarged my vision on what's possible nowadays with limited means and on new potential fields of professional activity in the future.
+
+If you're interested about knowing more concerning the nibble-do list or if you just want to get in touch, go ahead! I'm open for suggestions and curious about your own experiences!
+
+With <3
+
+Lucas
 
 
 ---
