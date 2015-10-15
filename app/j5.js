@@ -8,7 +8,7 @@ var ledAnimationSpeed = 300;
 
 var servo = null;
 var servoPosition = {
-	closed: 10,
+	closed: 15,
 	open: 155
 };
 
