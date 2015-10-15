@@ -75,6 +75,10 @@ With <3
 
 Lucas
 
+---
+
+Write your thoughts here ––>
+[![Gitter Chat](https://badges.gitter.im/vogelino/nibble-do-list.svg)](https://gitter.im/vogelino/nibble-do-list)
 
 ---
 
