@@ -33,6 +33,10 @@ var TodoItem = React.createClass({
 		if (e.which === 13) {
 			e.preventDefault();
 			e.target.parentNode.nextSibling.childNodes[1].focus();
+			if (e.metaKey || e.shiftKey) {
+				e.target.previousSibling.checked = true;
+				this.onChange();
+			}
 		}
 	},
 	render: function() {
