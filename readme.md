@@ -1,4 +1,4 @@
-# The nibble-do list  
+# The nibble-do list
 
 [![Gitter Chat](https://badges.gitter.im/vogelino/nibble-do-list.svg)](https://gitter.im/vogelino/nibble-do-list)  
 
