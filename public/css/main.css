@@ -63,5 +63,5 @@ body {
 }
 
 .todo-item-new-field input[type=checkbox] {
-    opacity: .5;
+    display: none;
 }
