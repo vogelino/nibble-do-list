@@ -56,7 +56,8 @@ I spoke about this issue to Fabian and he recommended me to try with _smarties_.
 
 After these many fixes, the prototype was finally working as excepted. Optically, the object itself became no masterpiece and honestly, it looks even quite ugly. However, I'm not product designer and I really don't pretend to it. If this would have been a real project, I think it would have been enough self-explanatory to communicate the idea and the purpose of the product.
 
-<iframe src="https://player.vimeo.com/video/143141941?color=ffffff" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+#### Demo
+<a href="https://player.vimeo.com/video/143141941" target="_blank" title="Demo of the nibble-do list on vimeo"><img src="http://demo.vogelino.com/nibble-do-list/video-preview.png" alt="Demo of the nibble-do list on vimeo" /></a>
 
 ### Conclusion
 Within two weeks, I could conceptualize, code and build a product in the amazing Internet of Things and make my first step in the world of physical Computing! I was impressed how easy it has been to achieve basic things, particularly if you come from the javascript world. Johnny Five allowed me to code an Arduino board without been forced to learn another language, which made me feel really comfortable.
