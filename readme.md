@@ -50,19 +50,13 @@ I started to assemble the pieces together and everything was working according t
 
 The rotation of the cylinder was quite smooth and worked even better than excepted. The first problem occurred when filling the prototype with peanuts. I suppose that the weight of the cylinder shifted the helices of the servo from their original position. This twisted the axis of the cylinder and blocked the its rotation. Fortunately I could fix the problem by putting the cylinder a bit lower!
 
-```
-// Images and videos coming
-```
-
 The second issue happened when the recipient was filled with peanuts until the top. The cylinder's rotation blocked because peanuts were half in the cylinder's hole and half in the recipient. To be sure that this caused the blocking, I inserted red lentils (way smaller) into the recipient. At this size the rotation worked well, even when marking tasks as "done" one after the other.
 
 I spoke about this issue to Fabian and he recommended me to try with _smarties_. I tried and it still blocked some times. I found out that the helices fixed to the cylinder where sometimes moving without the cylinder itself. The helices were not fixed with glue anymore but with masking tape. So, I replaced it with adhesive tape which held much better.
 
 After these many fixes, the prototype was finally working as excepted. Optically, the object itself became no masterpiece and honestly, it looks even quite ugly. However, I'm not product designer and I really don't pretend to it. If this would have been a real project, I think it would have been enough self-explanatory to communicate the idea and the purpose of the product.
 
-```
-// Images and videos coming
-```
+<iframe src="https://player.vimeo.com/video/143141941?color=ffffff" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
 ### Conclusion
 Within two weeks, I could conceptualize, code and build a product in the amazing Internet of Things and make my first step in the world of physical Computing! I was impressed how easy it has been to achieve basic things, particularly if you come from the javascript world. Johnny Five allowed me to code an Arduino board without been forced to learn another language, which made me feel really comfortable.
